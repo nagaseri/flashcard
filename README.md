@@ -18,12 +18,15 @@ the CLI.js file.
 INSTALLATION: 
 
 To install the application, clone down this repository using this link:
+
     git clone https://github.com/nagaseri/flashcard.git
 
 Then install the npm inquirer package to properly run the application: 
+
     npm install inquirer
 
 To run the application, execute the following command: 
+
     node CLI.js
 
 Enjoy!
