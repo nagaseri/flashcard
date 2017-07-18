@@ -34,37 +34,32 @@ console.log(fiveQ.back);
 console.log('--------------------------------------');
 
 //Cloze card questions
-firstQ = new ClozeCard(
-	'What is a baby dog called?', 'Puppy');
+firstQ = new ClozeCard('A puppy is a baby dog', 'puppy');
 console.log(firstQ.full);
 console.log(firstQ.cloze); 
-console.log(firstQ.partial); 
+console.log(firstQ.partial()); 
 console.log('-------------------------------------');
 
-secondQ = new ClozeCard(
-	'What is a baby dog called?', 'Puppy');
+secondQ = new ClozeCard('A puppy is a baby dog', 'puppy');
 console.log(secondQ.full);
 console.log(secondQ.cloze); 
-console.log(secondQ.partial); 
+console.log(secondQ.partial()); 
 console.log('-------------------------------------');
 
-thirdQ = new ClozeCard(
-	'What is a baby dog called?', 'Puppy');
+thirdQ = new ClozeCard('A puppy is a baby dog', 'puppy');
 console.log(thirdQ.full);
 console.log(thirdQ.cloze); 
-console.log(thirdQ.partial); 
+console.log(thirdQ.partial()); 
 console.log('-------------------------------------');
 
-fourthQ = new ClozeCard(
-	'What is a baby dog called?', 'Puppy');
+fourthQ = new ClozeCard('A puppy is a baby dog', 'puppy');
 console.log(fourthQ.full);
 console.log(fourthQ.cloze); 
-console.log(fourthQ.partial); 
+console.log(fourthQ.partial()); 
 console.log('-------------------------------------');
 
-fifthQ = new ClozeCard(
-	'What is a baby dog called?', 'Puppy');
+fifthQ = new ClozeCard('A puppy is a baby dog', 'puppy');
 console.log(fifthQ.full);
 console.log(fifthQ.cloze); 
-console.log(fifthQ.partial); 
+console.log(fifthQ.partial()); 
 console.log('-------------------------------------');
