@@ -6,15 +6,21 @@ var BasicCard = require("./BasicCard.js");
 //cloze flash card questions start as an empty array
 var basicQuestionsArray = [];
 
+questionCount = 0;
+
+//loop through the json object to populate the empty array 
 for(var i = 0; i < basicQuestions.length; i++){
 	var newCard = new BasicCard (basicQuestions[i].front, basicQuestions[i].back)
 	basicQuestionsArray.push(newCard);
 }
 
-for(var i = 0; i < basicQuestionsArray.length; i++){
+//loop through the array to ask the inquirer prompt
+if(questionCount < basicQuestionsArray.length){
 	askQuestion();
 }
 
+
+//use inquirer to ask the user the questions
 function askQuestion(){
 	inquirer
     .prompt({
@@ -23,6 +29,10 @@ function askQuestion(){
       message: basicQuestionsArray[0].front
     })
     .then(function(answer) {
-    	console.log(answer);
+    	Object.keys(answer).forEach(function (key) {
+  			console.log(answer[key]);
+    		questionCount++;
+    		console.log(questionCount);
+    	})
     })
 }
