@@ -1,4 +1,4 @@
-DESCRIPTION: 
+#DESCRIPTION: 
 
 This application is a basic flash card and a Cloze flash card question game that tests the user's knowledge on trivial trivia. 
 
@@ -10,7 +10,7 @@ In the Cloze flash card question game, the user is shown the question with a key
 
 The complete list of questions and answers lives in the JSON files. The basic flash card constructor object is in the BasicCard.js, and the Cloze flash card constructor object is in the ClozeCard.js file. The functions of each file are in the respective main.js files. 
 
-INSTALLATION: 
+#INSTALLATION: 
 
 To install the application, clone down this repository using this link:
 

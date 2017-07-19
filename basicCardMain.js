@@ -5,7 +5,7 @@ var BasicCard = require("./BasicCard.js");
 
 //cloze flash card questions start as an empty array
 var basicQuestionsArray = [];
-console.log('initial', basicQuestionsArray);
+// console.log('initial', basicQuestionsArray);
 
 //start question count at 0
 questionCount = 0;
@@ -16,12 +16,22 @@ for(var i = 0; i < basicQuestions.length; i++){
 	basicQuestionsArray.push(newCard);
 }
 
-console.log('after', basicQuestionsArray);
+// console.log('after', basicQuestionsArray);
 
 //end game function
 function endGame(){
 	console.log('Good job, you finished!');
 	questionCount = 0;
+}
+
+function startGame(){
+	if (questionCount < basicQuestionsArray.length) {
+    	askQuestion();
+	}
+	  // Otherwise end the game
+	else {
+	    endGame();
+  	}
 }
 
 function askQuestion(){
@@ -34,26 +44,27 @@ function askQuestion(){
 	    .then(function(answer) {
 	    	Object.keys(answer).forEach(function (key) {
 	    		if(answer[key] == basicQuestionsArray[questionCount].back){
-		    		// questionCount++;
+		    		questionCount++;
 		    		console.log('You are correct!');
+		    		startGame();
 	    		}
 	    		else{
-	    			console.log("You are incorrect, the correct answer is '" + card.back + "'.");
-	    			// questionCount++;
-	    			askQuestion();
+	    			console.log("You are incorrect, the correct answer is '" + basicQuestionsArray[questionCount].back + "'.");
+	    			questionCount++;
+	    			startGame();
 	    		}
 	    	})
 	    })
 }
 
-function startGame(){
-		//loop through the array to ask the inquirer prompt 
-		for(questionCount; questionCount < basicQuestionsArray.length; questionCount++){
-			// console.log('questionCount', questionCount);
-			askQuestion();
+// function startGame(){
+// 		//loop through the array to ask the inquirer prompt 
+// 		for(questionCount; questionCount < basicQuestionsArray.length; questionCount++){
+// 			// console.log('questionCount', questionCount);
+// 			askQuestion();
 
-		}
-		// endGame();
-}
+// 		}
+// 		// endGame();
+// }
 
 startGame();
