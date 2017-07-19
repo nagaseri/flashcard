@@ -16,7 +16,6 @@ for(var i = 0; i < basicQuestions.length; i++){
 	basicQuestionsArray.push(newCard);
 }
 
-// console.log('after', basicQuestionsArray);
 
 //end game function
 function endGame(){
@@ -24,6 +23,7 @@ function endGame(){
 	questionCount = 0;
 }
 
+//start game function 
 function startGame(){
 	if (questionCount < basicQuestionsArray.length) {
     	askQuestion();
@@ -34,6 +34,7 @@ function startGame(){
   	}
 }
 
+//ask question function
 function askQuestion(){
 	inquirer
 	    .prompt({
@@ -57,14 +58,5 @@ function askQuestion(){
 	    })
 }
 
-// function startGame(){
-// 		//loop through the array to ask the inquirer prompt 
-// 		for(questionCount; questionCount < basicQuestionsArray.length; questionCount++){
-// 			// console.log('questionCount', questionCount);
-// 			askQuestion();
-
-// 		}
-// 		// endGame();
-// }
 
 startGame();
