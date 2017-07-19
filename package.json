@@ -1,0 +1,23 @@
+{
+  "name": "flashcard",
+  "version": "1.0.0",
+  "description": "DESCRIPTION:",
+  "main": "BasicCard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nagaseri/flashcard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nagaseri/flashcard/issues"
+  },
+  "homepage": "https://github.com/nagaseri/flashcard#readme",
+  "dependencies": {
+    "inquirer": "^3.2.0"
+  }
+}

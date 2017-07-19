@@ -5,34 +5,55 @@ var BasicCard = require("./BasicCard.js");
 
 //cloze flash card questions start as an empty array
 var basicQuestionsArray = [];
+console.log('initial', basicQuestionsArray);
 
+//start question count at 0
 questionCount = 0;
 
-//loop through the json object to populate the empty array 
+// loop through the json object to populate the empty array 
 for(var i = 0; i < basicQuestions.length; i++){
 	var newCard = new BasicCard (basicQuestions[i].front, basicQuestions[i].back)
 	basicQuestionsArray.push(newCard);
 }
 
-//loop through the array to ask the inquirer prompt
-if(questionCount < basicQuestionsArray.length){
-	askQuestion();
+console.log('after', basicQuestionsArray);
+
+//end game function
+function endGame(){
+	console.log('Good job, you finished!');
+	questionCount = 0;
 }
 
-
-//use inquirer to ask the user the questions
 function askQuestion(){
 	inquirer
-    .prompt({
-      name: "question",
-      type: "input",
-      message: basicQuestionsArray[0].front
-    })
-    .then(function(answer) {
-    	Object.keys(answer).forEach(function (key) {
-  			console.log(answer[key]);
-    		questionCount++;
-    		console.log(questionCount);
-    	})
-    })
+	    .prompt({
+	      name: "question",
+	      type: "input",
+	      message: basicQuestionsArray[questionCount].front
+	    })
+	    .then(function(answer) {
+	    	Object.keys(answer).forEach(function (key) {
+	    		if(answer[key] == basicQuestionsArray[questionCount].back){
+		    		// questionCount++;
+		    		console.log('You are correct!');
+	    		}
+	    		else{
+	    			console.log("You are incorrect, the correct answer is '" + card.back + "'.");
+	    			// questionCount++;
+	    			askQuestion();
+	    		}
+	    	})
+	    })
 }
+
+function startGame(){
+		//loop through the array to ask the inquirer prompt 
+		for(questionCount; questionCount < basicQuestionsArray.length; questionCount++){
+			// console.log('questionCount', questionCount);
+			askQuestion();
+
+		}
+		// endGame();
+}
+
+startGame();
