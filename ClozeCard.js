@@ -7,7 +7,7 @@ function ClozeCard (text, cloze){
 	this.cloze = cloze;
 	this.partial = function(){
 		var formattedString = this.full.replace(this.cloze, '...');
-	return this.full.replace(this.cloze, '...');
+	return formattedString;
 	}
 }
 

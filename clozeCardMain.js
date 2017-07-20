@@ -11,9 +11,10 @@ questionCount = 0;
 
 // loop through the json object to populate the empty array 
 for(var i = 0; i < clozeQuestions.length; i++){
-	var newCard = new ClozeCard (clozeQuestions[i].full, clozeQuestions[i].cloze, clozeQuestions[i].partial);
+	var newCard = new ClozeCard (clozeQuestions[i].full, clozeQuestions[i].cloze);
 	clozeQuestionsArray.push(newCard);
 }
+// ClozeCard[i].partial
 
 //end game function
 function endGame(){
@@ -38,7 +39,7 @@ function askQuestion(){
 	    .prompt({
 	      name: "question",
 	      type: "input",
-	      message: clozeQuestionsArray[questionCount].partial
+	      message: clozeQuestionsArray[questionCount].partial()
 	    })
 	    .then(function(answer) {
 	    	Object.keys(answer).forEach(function (key) {

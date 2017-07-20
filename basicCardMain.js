@@ -8,7 +8,10 @@ var basicQuestionsArray = [];
 // console.log('initial', basicQuestionsArray);
 
 //start question count at 0
-questionCount = 0;
+var questionCount = 0;
+
+//start score counter at 0
+var score = 0;
 
 // loop through the json object to populate the empty array 
 for(var i = 0; i < basicQuestions.length; i++){
@@ -19,8 +22,9 @@ for(var i = 0; i < basicQuestions.length; i++){
 
 //end game function
 function endGame(){
-	console.log('Good job, you finished!');
+	console.log('Good job, you finished! Your score is ' + score);
 	questionCount = 0;
+	score = 0;
 }
 
 //start game function 
@@ -47,6 +51,7 @@ function askQuestion(){
 	    		if(answer[key] == basicQuestionsArray[questionCount].back){
 		    		questionCount++;
 		    		console.log('You are correct!');
+		    		score++;
 		    		startGame();
 	    		}
 	    		else{
